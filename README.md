@@ -30,11 +30,30 @@ A fully functional online pizza store built using **React**, **Redux Toolkit**, 
 
 ---
 
-## 📂 Project Structure
+### 📂 Project Structure
 
-<pre> pizza-store/ │ ├── public/ # Static assets ├── src/ │ ├── features/ │ │ ├── cart/ # Cart component and slice │ │ ├── user/ # User component and slice │ │ ├── order/ # Order components │ │ └── menu/ # Menu components │ ├── ui/ # Presentational UI components │ ├── utilities/ # Helper functions │ ├── services/ # API calls │ ├── App.jsx # Handling routing │ ├── main.jsx # App entry point │ ├── index.css # Tailwind setup │ └── store.js # Redux store ├── tailwind.config.js # Tailwind configuration ├── vite.config.js # Vite configuration └── package.json </pre>
+```bash
+pizza-store/
+├── public/                    # Static assets
+├── src/
+│   ├── features/
+│   │   ├── cart/              # Cart component and slice
+│   │   ├── user/              # User component and slice
+│   │   ├── order/             # Order components
+│   │   └── menu/              # Menu components
+│   ├── ui/                    # Presentational UI components
+│   ├── utilities/             # Helper functions
+│   ├── services/              # API calls
+│   ├── App.jsx                # Handling routing
+│   ├── main.jsx               # App entry point
+│   ├── index.css              # Tailwind setup
+│   └── store.js               # Redux store
+├── tailwind.config.js         # Tailwind configuration
+├── vite.config.js             # Vite configuration
+└── package.json
+```
 
 ## 🙋‍♂️ Author
 
 Mayank Rohilla
-GitHub: @MayankRohilla17299 & @ohilla09mayank
+GitHub: @MayankRohilla17299 & @rohilla09mayank
