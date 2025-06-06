@@ -1,8 +1,25 @@
+import { useDispatch, useSelector } from 'react-redux'
 import Button from '../../ui/Button'
 import { formatCurrency } from '../../utilities/helpers'
+import { addItem, getPizzaQuantity } from '../cart/cartSlice'
+import QuantityUpdate from '../cart/QuantityUpdate'
 
 function MenuItem({ pizza }) {
+    const dispatch = useDispatch()
     const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza
+    const currentQuantity = useSelector(getPizzaQuantity(id))
+
+    function handleAddItem() {
+        const newItem = {
+            pizzaId: id,
+            name,
+            quantity: 1,
+            unitPrice,
+            totalPrice: unitPrice,
+        }
+
+        dispatch(addItem(newItem))
+    }
 
     return (
         <li key={id} className="flex gap-4 py-2 ">
@@ -22,7 +39,13 @@ function MenuItem({ pizza }) {
                             <p className="text-sm">
                                 {formatCurrency(unitPrice)}
                             </p>
-                            <Button type="small">Add to Cart</Button>
+                            {currentQuantity > 0 ? (
+                                <QuantityUpdate id={id} />
+                            ) : (
+                                <Button onClick={handleAddItem} type="small">
+                                    Add to Cart
+                                </Button>
+                            )}
                         </>
                     ) : (
                         <p className="text-sm uppercase font-medium text-stone-500">
